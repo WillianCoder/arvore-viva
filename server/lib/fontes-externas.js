@@ -1,0 +1,12 @@
+// Catálogo de fontes externas legítimas. Apenas links oficiais: não há integração automática
+// nem consulta em nome do usuário. Cada pesquisa é feita no site oficial, sob as regras dele.
+export const FONTES_EXTERNAS = [
+  { nome: 'FamilySearch', descricao: 'Acervo genealógico gratuito com registros civis e paroquiais digitalizados, inclusive do Brasil.', cobertura: 'Mundial (inclui Brasil e Portugal)', periodo: 'Séculos XVI–XX', acesso: 'Gratuito, com cadastro', url: 'https://www.familysearch.org/' },
+  { nome: 'Arquivo Nacional — SIAN', descricao: 'Sistema de Informações do Arquivo Nacional: fundos históricos, registros de entrada de estrangeiros e documentos públicos.', cobertura: 'Brasil', periodo: 'Período colonial à atualidade', acesso: 'Gratuito, com cadastro', url: 'https://sian.an.gov.br/' },
+  { nome: 'Hemeroteca Digital Brasileira', descricao: 'Jornais e revistas históricas digitalizados pela Biblioteca Nacional, com busca por texto.', cobertura: 'Brasil', periodo: 'Século XIX–XX', acesso: 'Gratuito', url: 'https://bndigital.bn.gov.br/hemeroteca-digital/' },
+  { nome: 'Museu da Imigração do Estado de São Paulo', descricao: 'Acervo da Hospedaria de Imigrantes: livros de registro e listas de bordo.', cobertura: 'São Paulo', periodo: '1882–1978', acesso: 'Gratuito (consulta online e presencial)', url: 'https://museudaimigracao.org.br/' },
+  { nome: 'Registro Civil (CRC / Portal Oficial)', descricao: 'Solicitação oficial de certidões de nascimento, casamento e óbito aos cartórios brasileiros.', cobertura: 'Brasil', periodo: 'Registros civis a partir de 1889', acesso: 'Pago, por solicitação do interessado conforme a lei', url: 'https://registrocivil.org.br/' },
+  { nome: 'Portal Português de Arquivos', descricao: 'Pesquisa unificada em arquivos portugueses, incluindo registros paroquiais digitalizados.', cobertura: 'Portugal', periodo: 'Século XVI–XX', acesso: 'Gratuito', url: 'https://portal.arquivos.pt/' },
+  { nome: 'Portale Antenati', descricao: 'Registros do estado civil italiano digitalizados pelos Arquivos de Estado da Itália.', cobertura: 'Itália', periodo: 'Século XIX–XX', acesso: 'Gratuito', url: 'https://antenati.cultura.gov.it/' },
+  { nome: 'Statue of Liberty – Ellis Island Foundation', descricao: 'Listas de passageiros que chegaram ao porto de Nova York.', cobertura: 'Estados Unidos (chegadas a Nova York)', periodo: '1820–1957', acesso: 'Gratuito, com cadastro', url: 'https://www.statueofliberty.org/discover/passenger-ship-search/' },
+];
