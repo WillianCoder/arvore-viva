@@ -1,0 +1,25 @@
+# Publicação no Render (render.com). Plano grátis: os dados são apagados quando o serviço reinicia.
+# Para guardar dados de verdade, troque para o plano "starter" e descomente o disco.
+services:
+  - type: web
+    name: arvore-viva
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 22.13.1
+      - key: ENCRYPTION_KEY
+        generateValue: true
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: DATA_DIR
+        value: ./data
+      - key: ADMIN_EMAILS
+        sync: false
+    # disk:
+    #   name: dados
+    #   mountPath: /opt/render/project/src/data
+    #   sizeGB: 1

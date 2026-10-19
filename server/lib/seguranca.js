@@ -6,6 +6,8 @@ import { config } from '../config.js';
 
 function carregarChave() {
   if (/^[0-9a-f]{64}$/i.test(config.encryptionKey)) return Buffer.from(config.encryptionKey, 'hex');
+  // Segredo longo em outro formato (ex.: gerado pela hospedagem): deriva 32 bytes.
+  if (config.encryptionKey.length >= 32) return crypto.createHash('sha256').update(config.encryptionKey).digest();
   // Desenvolvimento: gera uma chave local fora do repositório.
   const arq = path.join(config.dataDir, '.chave');
   if (!fs.existsSync(arq)) {

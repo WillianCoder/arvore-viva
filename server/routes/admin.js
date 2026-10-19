@@ -29,7 +29,7 @@ export function rotasAdmin(r) {
       banco_bytes: fs.existsSync(arqDb) ? fs.statSync(arqDb).size : 0,
       migracoes: all('SELECT version, applied_at FROM schema_migrations ORDER BY version'),
       contagens: { usuarios: n('users'), arvores: n('family_trees'), pessoas: n('persons'), relacoes: n('relationships'), documentos: n('documents'), auditoria: n('audit_logs') },
-      chave_configurada: /^[0-9a-f]{64}$/i.test(config.encryptionKey),
+      chave_configurada: config.encryptionKey.length >= 32,
       cookie_seguro: config.cookieSecure,
       email_configurado: false, ocr_imagens: false,
     };
