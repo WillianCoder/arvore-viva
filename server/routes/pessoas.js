@@ -76,7 +76,9 @@ export function buscarDuplicidades(treeId, dados, papel, userId, ignorarId) {
   for (const p of pessoas) {
     if (p.id === ignorarId || restrita(p, papel, userId)) continue;
     const c = compararPessoas(novo, perfilComparacao(treeId, p, rels, nomes));
-    if (c.score >= 40 && c.categoria !== 'improvavel') out.push({ pessoa: serializarPessoa(p, papel, userId), ...c });
+    // Mostra também quem tem nome muito parecido, mesmo com poucos dados para comparar.
+    const pesoNome = c.fatores.positivos.find((f) => f.fator === 'Nome')?.peso || 0;
+    if ((c.score >= 40 && c.categoria !== 'improvavel') || (pesoNome >= 26 && c.categoria !== 'conflitante' && c.categoria !== 'improvavel')) out.push({ pessoa: serializarPessoa(p, papel, userId), ...c });
   }
   return out.sort((a, b) => b.score - a.score).slice(0, 8);
 }
